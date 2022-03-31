@@ -1,5 +1,21 @@
 # Audio Utils : a Python library for classic audio utils
 
+##### generate_sine_waves(filename, length, sr=44100, freqs=[(0.2, 440)])
+This function generates a wav file of sample rate sr. It is composed of addition of the freq present
+in the list of tuples freqs, each tuple being a couple (Amplitude, Frequency) [amp in [0,1] - freq in Hz]
+
+	Arguments :
+	----------
+		  - filename : path and file name to write the resulting wav
+		  - length : length in seconds
+		  - sr : sample rate (default 44.1 kHz)
+		  - freqs : a list of couple (Amplitude, Frequency) w/ amp in [0,1]
+#### WARNING !!!
+this is a deprecated way of creating a sine wav
+it is using a lot of memory
+WAVTABLE would be better
+
+
 
 ##### find_n_harmonics(data, sr, n, samples_per_slice=1024, overlap=100, n_local_max=5, local_steps=1, local_min_height=1):
 Function that extracts the n main frequencies of a wav file
