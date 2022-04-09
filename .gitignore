@@ -1,2 +1,3 @@
-**/wavtable/.idea
-**/wavtable/__pycache__
+.gitignore
+wavtable/.idea
+wavtable/__pycache__
