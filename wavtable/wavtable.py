@@ -41,6 +41,7 @@ class WavTable:
     def _build_wavtable(self):
         self._wavtable = np.zeros((self._nb_of_samples, ))
         # fill it
+        print(self._function)
         for sample in range(self._nb_of_samples):
             self.wavtable[sample] = self._function(2 * np.pi * sample / self._nb_of_samples)
 
@@ -69,7 +70,7 @@ class WavTable:
         index_inf = trunc
         index_sup = (trunc + 1) % self._nb_of_samples
 
-        slope = self._function(index_sup) - self._function(index_inf)  # / (index_sup - index_inf) that is one
+        slope = self._function(index_sup) - self._function(index_inf)  # / (index_sup - index_inf)
         offset = self._function(index_inf) - slope * index_inf
 
         return slope * index + offset
